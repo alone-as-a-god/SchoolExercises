@@ -38,7 +38,7 @@
 
 #clearAll{
     grid-column-start: 3;
-    row-start: 5;
+    grid-row-start: 5;
 }
 .button .p{
     font-size: xx-large;
