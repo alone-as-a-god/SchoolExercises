@@ -1,3 +1,4 @@
+/* Calculator */
 .calcGrid{
     height: 600px;
     display: grid;
@@ -42,3 +43,6 @@
 .button .p{
     font-size: xx-large;
 }
+
+/* ////////////////////////////////////////7 */
+
