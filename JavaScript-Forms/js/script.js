@@ -109,3 +109,16 @@ function clearAll(){
   toCalculate = "";
   updateDisplay();
 }
+
+/////////////////////////////
+var currentImage = "../styles/images/diluc.jpg"
+///////EXERCISE 6///////////
+function changeImg(){
+  if(currentImage == "../styles/images/diluc.jpg"){
+  document.getElementById("sourceImg").src="../styles/images/venti.jpg";
+  currentImage = "../styles/images/venti.jpg"
+}else{
+  document.getElementById("sourceImg").src = "../styles/images/diluc.jpg"
+  currentImage = "../styles/images/diluc.jpg"
+}
+}
