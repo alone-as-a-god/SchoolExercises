@@ -1,0 +1,36 @@
+.calcGrid{
+    height: 600px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    
+}
+#display{
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+#number{
+    grid-column-start: auto;
+    grid-row-start: auto;
+}
+#plus{
+    grid-column-start: 4;
+    grid-row-start: 5;
+}
+#minus{
+    grid-column-start: 4;
+    grid-row-start: 4;
+}
+#division{
+    grid-column-start: 4;
+    grid-row-start: 3;
+}
+#mult{
+    grid-column-start: 4;
+    grid-row-start: 2;
+}
+#equals{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 5;
+}

@@ -16,7 +16,8 @@ function clickSubmit(){
 
 function updateTime(){
     
-    date = new Date();
+    if(document.URL.includes("ex2.html")){
+      date = new Date();
     year = date.getFullYear();
     month = date.getMonth();
     day = date.getDay()
@@ -42,6 +43,8 @@ function updateTime(){
 
     //window.alert(monthNames[month] + " " + day + "th " + year + " " + hour + ":" +minute + ":" + second + " " + prefix);
     document.getElementById("time").innerHTML = monthNames[month] + " " + day + "th " + year + " " + hour + ":" +minute + ":" + second + ":" + millisecond + " " + prefix;
+    }
+    
   }
 
 window.setInterval(function(){
@@ -49,3 +52,48 @@ window.setInterval(function(){
 }, 1);
 
 //////////////////////////////////////////////////
+
+////////////EXERCISE 3 ///////////////////////////
+
+function changeColor(){
+  color = document.getElementById("colorPicker").value;
+  document.body.style.backgroundColor = color;
+}
+
+/////////////////////////
+
+////////////EXERCISE 4 ////////////////
+
+function clickSubmit2(){
+  username = document.getElementById('usernameInput').value;
+  
+  if(document.getElementById("checkDoctor").checked){
+    username = "Dr. " + username;
+  }
+  if(document.getElementById("checkProf").checked){
+    username = "Prof. " + username;
+  }
+  if(document.getElementById("radioMale").checked){
+    username = "Herr " + username;
+  }else{
+    username = "Frau " + username;
+  }
+  window.alert(username);
+  
+}
+
+////////EXERCISE 5 ////////////////
+var toCalculate;
+function updateDisplay(){
+  document.getElementById("display").value = tocalculate;
+}
+
+function addValue(value){
+    toCalculate = toCalculate + value;
+    updateDisplay();
+}
+
+function calculate(){
+  tocalculate = eval.toCalculate;
+  updateDisplay();
+}
