@@ -31,6 +31,14 @@
 }
 #equals{
     grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-end: 3;
     grid-row-start: 5;
+}
+
+#clearAll{
+    grid-column-start: 3;
+    row-start: 5;
+}
+.button .p{
+    font-size: xx-large;
 }

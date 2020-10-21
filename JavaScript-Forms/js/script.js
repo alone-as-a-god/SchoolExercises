@@ -83,17 +83,29 @@ function clickSubmit2(){
 }
 
 ////////EXERCISE 5 ////////////////
-var toCalculate;
+var toCalculate = "";
 function updateDisplay(){
-  document.getElementById("display").value = tocalculate;
+  document.getElementById("display").value = toCalculate;
 }
 
-function addValue(value){
-    toCalculate = toCalculate + value;
-    updateDisplay();
+
+function addNr(number){
+  number = parseInt(number);
+  toCalculate = toCalculate +    + number;
+  updateDisplay();
+}
+
+function addOperator(operator){
+  toCalculate = toCalculate + operator;
+  updateDisplay();
 }
 
 function calculate(){
-  tocalculate = eval.toCalculate;
+  toCalculate = parseFloat(eval(toCalculate));
+  updateDisplay();
+}
+
+function clearAll(){
+  toCalculate = "";
   updateDisplay();
 }
