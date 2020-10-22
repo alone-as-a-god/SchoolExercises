@@ -111,8 +111,9 @@ function clearAll(){
 }
 
 /////////////////////////////
-var currentImage = "../styles/images/diluc.jpg"
 ///////EXERCISE 6///////////
+var currentImage = "../styles/images/diluc.jpg"
+
 function changeImg(){
   if(currentImage == "../styles/images/diluc.jpg"){
   document.getElementById("sourceImg").src="../styles/images/venti.jpg";
@@ -122,3 +123,61 @@ function changeImg(){
   currentImage = "../styles/images/diluc.jpg"
 }
 }
+/////////////////////////////
+
+///////EXERCISE 7 ////////////
+var isBold = false;
+function editParagraph(){
+  const elements = document.getElementsByClassName("par");
+  for(let i = 0; i<elements.length; i++){
+    if(isBold==false){
+      elements[i].style.fontWeight = "bold";
+    }else{
+      elements[i].style.fontWeight = "normal";
+    } 
+  }
+  isBold = !isBold;
+}
+
+//////////////////////////////
+
+////////EXERCISE 8 ///////////
+function openLink(link){
+  window.open(link, "_self");
+}
+
+function openTab(link){
+  window.open(link);
+}
+
+function openWindow(link){
+  window.open(link, "_blank", "height=500,width=500");
+}
+////////////////////////////
+
+////////EXERCISE 9 /////////
+
+function addCookie(name){
+  //var date = new Date();
+  //date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));    //Cookie expires after 30 days
+  document.cookie = "username=" + name;
+
+}
+
+function readCookie(){
+  
+}
+
+
+///////////////////////////
+
+///////EXERCISE 10/////////
+
+function getBrowserInformation(){
+  browserName = navigator.userAgent;
+  browserVersion = ''+parseFloat(navigator.appVersion);
+  browserLanguage = navigator.language;
+  window.alert(browserName + "  " + browserVersion + "  " + browserLanguage);
+}
+
+///////////////////////////
