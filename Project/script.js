@@ -1,3 +1,21 @@
+// Code goes here
+
+(function () {
+
+    var app = angular.module('sampleApp',['ngRoute']);
+    
+    app.config(function ($routeProvider){
+        $routeProvider
+            .when('/',{
+                templateUrl:'Folder/ex1.html'
+            })
+            .when('/ex2',{
+                templateUrl:'Folder/ex2.html'
+            })
+            .otherwise({ redirectTo:'/'});
+    });
+})();
+
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
@@ -179,46 +197,3 @@ function getBrowserInformation(){
 }
 
 ///////////////////////////
-
-/////// ANGULAR CANCER /////////////
-(function () {
-
-  var app = angular.module('sampleApp',['ngRoute']);
-  
-  app.config(function ($routeProvider){
-      $routeProvider
-          .when('/',{
-              templateUrl:'../exercises/ex1.html'
-          })
-          .when('/ex2',{
-              templateUrl:'../exercises/ex2.html'
-          })
-          .when('/ex3',{
-              templateUrl:'../exercises/ex3.html'
-          })
-          .when('/ex4',{
-            templateUrl:'../exercises/ex4.html'
-          })  
-          .when('/ex5',{
-            templateUrl:'../exercises/ex5.html'
-          })  
-          .when('/ex6',{
-            templateUrl:'../exercises/ex6.html'
-          })  
-          .when('/ex7',{
-            templateUrl:'../exercises/ex7.html'
-          })  
-          .when('/ex8',{
-            templateUrl:'../exercises/ex8.html'
-          })  
-          .when('/ex9',{
-            templateUrl:'../exercises/ex9.html'
-          })  
-          .when('/ex10',{
-            templateUrl:'../exercises/ex10.html'
-          })  
-          .otherwise({ redirectTo:'/'});
-  });
-})();
-
-
