@@ -7,7 +7,9 @@
     <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.9/angular-route.js" data-semver="1.4.9"></script>
     <script src="../js/script.js"></script>
     <script src="../js/headerController.js"></script>
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
+  </head>
 
 <body>
 
@@ -18,8 +20,8 @@
           <a class="navbar-brand" href="#">JS</a>
         </div>
         <ul class="nav navbar-nav">
-          <li ng-class="{ active: isActive('/')}"><a href="#/ex1">EX1</a></li>
-          <li ng-class="{ active: isActive('/ex2')}"><a href="#/ex2">EX2</a></li>
+          <li class="navli" ng-class="{ active: isActive('/')}"><a href="#/ex1">EX1</a></li>
+          <li class="navli"  ng-class="{ active: isActive('/ex2')}"><a href="#/ex2">EX2</a></li>
           <li ng-class="{ active: isActive('/ex3')}"><a href="#/ex3">EX3</a></li>
           <li ng-class="{ active: isActive('/ex4')}"><a href="#/ex4">EX4</a></li>
           <li ng-class="{ active: isActive('/ex5')}"><a href="#/ex5">EX5</a></li>
