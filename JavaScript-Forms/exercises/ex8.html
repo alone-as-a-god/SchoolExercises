@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 8</title>
     <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../styles/stylesheet.css">
 </head>
 <body>
-    <h2>Let the user choose between opening a new tab or window</h2>
-    <hr>
-    <p>Do you want to open the next exercise on the same tab, a new tab or even a new window?</p>
-    <button onclick="openLink('ex9.html')">This tab</button>
-    <button onclick="openTab('ex9.html')">New tab</button>
-    <button onclick="openWindow('ex9.html')">New window</button>
+    <div class="windowMockup">
+        <div class="fakeBar">
+            <h2>Let the user choose between opening a new tab or window</h2>
+        </div>
+        <div class="windowContent">
+            <p>Do you want to open the next exercise on the same tab, a new tab or even a new window?</p>
+            <button onclick="openLink('ex9.html')">This tab</button>
+            <button onclick="openTab('ex9.html')">New tab</button>
+            <button onclick="openWindow('ex9.html')">New window</button>
+        </div>
+       
+        
+    </div>
+    
 </body>
 </html>

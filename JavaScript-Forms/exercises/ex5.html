@@ -8,30 +8,36 @@
     <script src="../js/script.js"></script>
 </head>
 <body>
-    <div>
-        <div class="calcGrid">
-            <input type="text" id="display" readonly="readonly">
-            <button id="number" onclick="addNr(7)">7</button>
-            <button id="number" onclick="addNr(8)">8</button>
-            <button id="number" onclick="addNr(9)">9</button>
-            
-            <button id="number" onclick="addNr(4)">4</button>
-            <button id="number" onclick="addNr(5)">5</button>
-            
-            <button id="number" onclick="addNr(6)">6</button>
-               
-            <button id="number" onclick="addNr(1)">1</button>
-            <button id="number" onclick="addNr(2)">2</button>
-            <button id="number" onclick="addNr(3)">3</button>
-    
-            <button id="number" onclick="addNr(0)">0</button>
-            <button id="equals" onclick="calculate()">=</button>
-            <button id="plus" onclick="addOperator('+')">+</button>
-            <button id="minus" onclick="addOperator('-')">-</button>
-            <button id="division" onclick="addOperator('/')">&divide;</button>
-            <button id="mult" onclick="addOperator('*')">*</button>
-            <button id="clearAll" onclick="clearAll()">C</button>
+    <div class="windowMockup">
+        <div class="fakeBar">
+            <h2>Calculator</h2>
         </div>
+        <div class="windowContent">
+            <div class="calcGrid">
+                <input type="text" id="display" readonly="readonly">
+                <button id="number" onclick="addNr(7)">7</button>
+                <button id="number" onclick="addNr(8)">8</button>
+                <button id="number" onclick="addNr(9)">9</button>
+                
+                <button id="number" onclick="addNr(4)">4</button>
+                <button id="number" onclick="addNr(5)">5</button>
+                
+                <button id="number" onclick="addNr(6)">6</button>
+                   
+                <button id="number" onclick="addNr(1)">1</button>
+                <button id="number" onclick="addNr(2)">2</button>
+                <button id="number" onclick="addNr(3)">3</button>
+        
+                <button id="number" onclick="addNr(0)">0</button>
+                <button id="equals" onclick="calculate()">=</button>
+                <button id="plus" onclick="addOperator('+')">+</button>
+                <button id="minus" onclick="addOperator('-')">-</button>
+                <button id="division" onclick="addOperator('/')">&divide;</button>
+                <button id="mult" onclick="addOperator('*')">*</button>
+                <button id="clearAll" onclick="clearAll()">C</button>
+            </div>
+        </div>
+        
     </div>
     
     

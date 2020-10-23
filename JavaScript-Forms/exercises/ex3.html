@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 3</title>
     <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../styles/stylesheet.css">
 </head>
 <body>
-    <h2 onclick="changeColor()">Change background color with javascript</h2>
-    <input type="color" id="colorPicker">
-    <label for="colorPicker">Pick a color</label>
-    <br>
-    <input type="submit" id="submitColor" onclick="changeColor()">
+    <div class="windowMockup">
+        <div class="fakeBar">
+            <h2 onclick="changeColor()">Change background color with javascript</h2>
+        </div>
+        <div class="windowContent">
+            <input type="color" id="colorPicker">
+            <label for="colorPicker">Pick a color</label>
+            <br>
+            <input type="submit" id="submitColor" onclick="changeColor()">
+        </div>
+        
+    </div>
+    
 </body>
 </html>

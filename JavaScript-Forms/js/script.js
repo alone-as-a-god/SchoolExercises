@@ -16,7 +16,7 @@ function clickSubmit(){
 
 function updateTime(){
     
-    if(document.URL.includes("ex2.html")){
+    if(document.URL.includes("ex2")){
       date = new Date();
     year = date.getFullYear();
     month = date.getMonth();

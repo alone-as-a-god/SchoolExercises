@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 9</title>
     <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../styles/stylesheet.css">
 </head>
 <body>
-    <h2>Add cookies to the page</h2>
-    <hr>
-    <p id="greeting">please enter your name</p>
-    <form onsubmit="clickSubmit2()">
-        <input type="text" name="Username" id="usernameInput">
-        <input type="submit" id="submitBtn" >
+    <div class="windowMockup">
+        <div class="fakeBar">
+            <h2>Add cookies to the page</h2>
+        </div>
+        <div class="windowContent">
+            <p id="greeting">please enter your name</p>
+            <form onsubmit="clickSubmit2()">
+            <input type="text" name="Username" id="usernameInput">
+            <input type="submit" id="submitBtn" >
+            </form>
+            <button onclick="changeGreeting()">Already registered?</button>
+        </div>
         
-    </form>
-    <button onclick="changeGreeting()">Already registered?</button>
+        
+    </div>
+    
 </body>
 </html>
