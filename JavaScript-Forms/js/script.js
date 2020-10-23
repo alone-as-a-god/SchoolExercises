@@ -157,13 +157,48 @@ function openWindow(link){
 
 ////////EXERCISE 9 /////////
 
-function addCookie(name){
-  //var date = new Date();
-  //date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));    //Cookie expires after 30 days
-  document.cookie = "username=" + name;
-
+function clickSubmit2(){
+  username = document.getElementById('usernameInput').value;
+  setCookie("username",username,14);
+  window.alert("added cookie" + username, 14);
+  
 }
 
+function setCookie(cname, cvalue, exdays){
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires"+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function loadCookie(){
+  window.alert(getCookie("username"));
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function changeGreeting(){
+  cookie = getCookie("username");
+  if(cookie!=null){
+    document.getElementById("greeting").innerHTML = "Welcome back " + cookie;
+  }else{
+    window.alert(cookie);
+  }
+}
 
 
 
@@ -181,44 +216,44 @@ function getBrowserInformation(){
 ///////////////////////////
 
 /////// ANGULAR CANCER /////////////
-(function () {
+  (function () {
 
-  var app = angular.module('sampleApp',['ngRoute']);
-  
-  app.config(function ($routeProvider){
-      $routeProvider
-          .when('/',{
-              templateUrl:'../exercises/ex1.html'
-          })
-          .when('/ex2',{
-              templateUrl:'../exercises/ex2.html'
-          })
-          .when('/ex3',{
-              templateUrl:'../exercises/ex3.html'
-          })
-          .when('/ex4',{
-            templateUrl:'../exercises/ex4.html'
-          })  
-          .when('/ex5',{
-            templateUrl:'../exercises/ex5.html'
-          })  
-          .when('/ex6',{
-            templateUrl:'../exercises/ex6.html'
-          })  
-          .when('/ex7',{
-            templateUrl:'../exercises/ex7.html'
-          })  
-          .when('/ex8',{
-            templateUrl:'../exercises/ex8.html'
-          })  
-          .when('/ex9',{
-            templateUrl:'../exercises/ex9.html'
-          })  
-          .when('/ex10',{
-            templateUrl:'../exercises/ex10.html'
-          })  
-          .otherwise({ redirectTo:'/'});
-  });
-})();
+    var app = angular.module('sampleApp',['ngRoute']);
+    
+    app.config(function ($routeProvider){
+        $routeProvider
+            .when('/',{
+                templateUrl:'../exercises/ex1.html'
+            })
+            .when('/ex2',{
+                templateUrl:'../exercises/ex2.html'
+            })
+            .when('/ex3',{
+                templateUrl:'../exercises/ex3.html'
+            })
+            .when('/ex4',{
+              templateUrl:'../exercises/ex4.html'
+            })  
+            .when('/ex5',{
+              templateUrl:'../exercises/ex5.html'
+            })  
+            .when('/ex6',{
+              templateUrl:'../exercises/ex6.html'
+            })  
+            .when('/ex7',{
+              templateUrl:'../exercises/ex7.html'
+            })  
+            .when('/ex8',{
+              templateUrl:'../exercises/ex8.html'
+            })  
+            .when('/ex9',{
+              templateUrl:'../exercises/ex9.html'
+            })  
+            .when('/ex10',{
+              templateUrl:'../exercises/ex10.html'
+            })  
+            .otherwise({ redirectTo:'/'});
+    });
+  })();
 
 
