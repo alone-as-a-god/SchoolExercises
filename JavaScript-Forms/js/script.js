@@ -20,7 +20,7 @@ function updateTime(){
       date = new Date();
     year = date.getFullYear();
     month = date.getMonth();
-    day = date.getDay()
+    day = date.getDay() + 1;
     hour = date.getHours();
     minute = date.getMinutes();
     second = date.getSeconds();
@@ -40,9 +40,22 @@ function updateTime(){
     if(minute < 10){
       minute = "0"+parseInt(minute);
     }
+    switch(day){
+      case 1:
+        formattedDay = "1st ";
+        break;
+      case 2:
+        formattedDay = "2nd ";
+        break;
+      case 3: 
+        formattedDay = "3rd ";
+        break;
+      default:
+        formattedDay = day+"th ";
+    }
 
     //window.alert(monthNames[month] + " " + day + "th " + year + " " + hour + ":" +minute + ":" + second + " " + prefix);
-    document.getElementById("time").innerHTML = monthNames[month] + " " + day + "th " + year + " " + hour + ":" +minute + ":" + second + ":" + millisecond + " " + prefix;
+    document.getElementById("time").innerHTML = monthNames[month] + " " + formattedDay + year + " " + hour + ":" +minute + ":" + second + ":" + millisecond + " " + prefix;
     }
     
   }
@@ -157,7 +170,7 @@ function openWindow(link){
 
 ////////EXERCISE 9 /////////
 
-function clickSubmit2(){
+function clickSubmit3(){
   username = document.getElementById('usernameInput').value;
   setCookie("username",username,14);
   window.alert("added cookie" + username, 14);
@@ -195,8 +208,6 @@ function changeGreeting(){
   cookie = getCookie("username");
   if(cookie!=null){
     document.getElementById("greeting").innerHTML = "Welcome back " + cookie;
-  }else{
-    window.alert(cookie);
   }
 }
 

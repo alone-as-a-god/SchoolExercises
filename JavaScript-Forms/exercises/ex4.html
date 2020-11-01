@@ -19,14 +19,18 @@
             
         </div>
         <div class="windowContent">
-            <p>please enter your name</p>
+            <p>please enter the following data</p>
             <form onsubmit="clickSubmit2()">
-            <input type="text" name="Username" id="usernameInput">
+            <input type="text" name="Username" id="usernameInput" placeholder="Name">
+            
+            <br>
+            <span>Gender </span>                                 <!-- Note to self: Span makes text appear left of boxes-->
             <input type="radio" name="gender" id="radioMale">
             <label for="radioMale">Male</label>
             <input type="radio" name="gender" id="radioFemale">
             <label for="radioFemale">Female</label>
             <br>
+            <span>Titles </span>
             <input type="checkbox" id="checkDoctor">
             <label for="checkDoctor">Dr.</label>
             <input type="checkbox" id="checkProf">
