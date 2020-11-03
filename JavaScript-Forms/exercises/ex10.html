@@ -7,7 +7,7 @@
     <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../styles/stylesheet.css">
 </head>
-<body>
+<body onload="getBrowserInformation()">
     <div class="windowMockup">
         <div class="fakeBar">
             <div>
@@ -19,9 +19,12 @@
             
             <p id="title-text">Display browser version and language</p>
             
+            
         </div>
         <div class="windowContent">
+            <p id="BrowserName"></p>
             <button onclick="getBrowserInformation()">Get Browser Information</button>
+           
         </div>
         
     </div>
