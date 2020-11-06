@@ -2,15 +2,44 @@ body{
     padding: 0;
     margin: 0;
     background: linear-gradient(#3204fdba, #9907facc), url(../styles/land.jpg) no-repeat top center;
+    background-attachment: fixed;
 }
 
-header{
-    height: 100vh;
+h1{
+    color: white;
+    font: bold 4em/2em monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+   
+   
+ }
+ 
+h2{
+    color: white;
+    font: bold 4em monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+   
+ }
+
+p{
     color: white;
     font: bold 2em/2em monospace;
     display: flex;
     justify-content: center;
     align-items: center;
-   
-   
- }
+    user-select: none;
+}
+
+.onePage{
+    height: 100vh;
+    border: solid black;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
