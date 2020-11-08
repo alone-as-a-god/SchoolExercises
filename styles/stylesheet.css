@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin: 0;
     background: linear-gradient(#3204fdba, #9907facc), url(../styles/land.jpg) no-repeat top center;
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -37,7 +38,7 @@ p{
 
 .onePage{
     height: 100vh;
-    border: solid black;
+
 }
 a{
     text-decoration: none;

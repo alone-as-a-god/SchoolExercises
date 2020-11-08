@@ -2,7 +2,9 @@
 body{
     padding: 0;
     margin: 0;
-    background: linear-gradient(#3204fdba, #9907facc), url(images/office.jpg) no-repeat top center;
+    min-height: 100vh;
+    background: linear-gradient(#f1dcdcba, #172017cc), url(images/office.jpg) no-repeat top center;
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -150,11 +152,10 @@ h2{
 }
 
 
-/* Navbar */
-.navli{
-    background: transparent;
+.inBlock{
+    display: inline-block;
 }
-.navli:hover{
 
+#alpha{
+    width: 200px;
 }
-.navbar{}

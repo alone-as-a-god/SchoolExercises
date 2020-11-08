@@ -1,11 +1,11 @@
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
-];
+];                                                                              //works like enum in c, jus translates numbers to the corresponding month, needed later to display time and date
 
 ////////////EXERCISE 1 //////////////
 
-function clickSubmit(){
-    username = document.getElementById('usernameInput').value;
+function clickSubmit(){                                                     
+    username = document.getElementById('usernameInput').value;                  //reads the input in the "usernameInput" field
     window.alert(username);
     
 }
@@ -16,51 +16,51 @@ function clickSubmit(){
 
 function updateTime(){
     
-    if(document.URL.includes("ex2")){
-      date = new Date();
-    year = date.getFullYear();
-    month = date.getMonth();
-    day = date.getDay() + 1;
-    hour = date.getHours();
-    minute = date.getMinutes();
-    second = date.getSeconds();
-    millisecond = date.getMilliseconds();
-    prefix = "am";
-    if(hour >= 12){
-      prefix = "pm";
-    }
-    if(millisecond < 100){
-      millisecond = "0"+ parseInt(millisecond);
-    }else{
-      millisecond = parseInt(millisecond);
-    }
-    if(second < 10){
-      second = "0"+parseInt(second);
-    }
-    if(minute < 10){
-      minute = "0"+parseInt(minute);
-    }
-    switch(day){
-      case 1:
-        formattedDay = "1st ";
-        break;
-      case 2:
-        formattedDay = "2nd ";
-        break;
-      case 3: 
-        formattedDay = "3rd ";
-        break;
-      default:
-        formattedDay = day+"th ";
-    }
+    if(document.URL.includes("ex2")){                                         //Since my page is basically always the same, thanks to the angular routes stuff (coming later) it checks if the user is currently on the correct tab for this exercise
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth();
+        day = date.getDay() + 1;
+        hour = date.getHours();
+        minute = date.getMinutes();
+        second = date.getSeconds();
+        millisecond = date.getMilliseconds();
+        prefix = "am";  
+        if(hour >= 12){                                                 //The following is just formatting, like am/pm month names etc
+          prefix = "pm";
+        }
+        if(millisecond < 100){
+          millisecond = "0"+ parseInt(millisecond);
+        }else{
+          millisecond = parseInt(millisecond);
+        }
+        if(second < 10){
+          second = "0"+parseInt(second);
+        }
+        if(minute < 10){
+          minute = "0"+parseInt(minute);
+        }
+        switch(day){
+          case 1:
+            formattedDay = "1st ";
+            break;
+          case 2:
+            formattedDay = "2nd ";
+            break;
+          case 3: 
+            formattedDay = "3rd ";
+            break;
+          default:
+            formattedDay = day+"th ";
+        }
 
-    //window.alert(monthNames[month] + " " + day + "th " + year + " " + hour + ":" +minute + ":" + second + " " + prefix);
-    document.getElementById("time").innerHTML = monthNames[month] + " " + formattedDay + year + " " + hour + ":" +minute + ":" + second + ":" + millisecond + " " + prefix;
+        //window.alert(monthNames[month] + " " + day + "th " + year + " " + hour + ":" +minute + ":" + second + " " + prefix);
+        document.getElementById("time").innerHTML = monthNames[month] + " " + formattedDay + year + " " + hour + ":" +minute + ":" + second + ":" + millisecond + " " + prefix;
     }
     
   }
 
-window.setInterval(function(){
+window.setInterval(function(){      //The updateTime function gets called every 1ms
   updateTime();
 }, 1);
 
@@ -68,9 +68,18 @@ window.setInterval(function(){
 
 ////////////EXERCISE 3 ///////////////////////////
 
-function changeColor(){
-  color = document.getElementById("colorPicker").value;
-  document.body.style.background = color;
+function changeColor(){                                     //Changes sites background color to the color specified in the picker
+  alpha = document.getElementById("alpha").value;
+  color = adjustHexOpacity(document.getElementById("colorPicker").value, alpha);
+  color2 = adjustHexOpacity(document.getElementById("colorPicker2").value, alpha);
+  document.body.style.background = "linear-gradient("+color+", "+color2+"), url(../styles/images/office.jpg) no-repeat top center";
+}
+
+function adjustHexOpacity (color, opacity) {        //Formates the color to add opacity (otherwise the background image would be invisible)
+  const r = parseInt(color.slice(1, 3), 16);
+  const g = parseInt(color.slice(3, 5), 16);
+  const b = parseInt(color.slice(5, 7), 16);
+  return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + opacity + ')';
 }
 
 
@@ -81,7 +90,7 @@ function changeColor(){
 function clickSubmit2(){
   username = document.getElementById('usernameInput').value;
   
-  if(document.getElementById("checkDoctor").checked){
+  if(document.getElementById("checkDoctor").checked){   //If the corresponding checkboxes/radioboxes are checked it adds these titles
     username = "Dr. " + username;
   }
   if(document.getElementById("checkProf").checked){
@@ -97,15 +106,15 @@ function clickSubmit2(){
 }
 
 ////////EXERCISE 5 ////////////////
-var toCalculate = "";
+var toCalculate = "";                 
 function updateDisplay(){
-  document.getElementById("display").value = toCalculate;
+  document.getElementById("display").value = toCalculate; 
 }
 
 
-function addNr(number){
-  number = parseInt(number);
-  toCalculate = toCalculate +    + number;
+function addNr(number){                     
+  number = parseInt(number);  
+  toCalculate = toCalculate + number;   //Adds the entered number to the end of previous number, therefore it is not an addition 
   updateDisplay();
 }
 
@@ -115,7 +124,7 @@ function addOperator(operator){
 }
 
 function calculate(){
-  toCalculate = parseFloat(eval(toCalculate));
+  toCalculate = parseFloat(eval(toCalculate));    //eval evaluates the expression entered into the input field 
   updateDisplay();
 }
 
@@ -128,7 +137,7 @@ function clearAll(){
 ///////EXERCISE 6///////////
 var currentImage = "../styles/images/diluc.jpg"
 
-function changeImg(){
+function changeImg(){                                           //Always swaps between these two pictures, could be increased to more pictures by just using an array, didnt deem it neccessary
   if(currentImage == "../styles/images/diluc.jpg"){
   document.getElementById("sourceImg").src="../styles/images/venti.jpg";
   currentImage = "../styles/images/venti.jpg"
@@ -140,7 +149,7 @@ function changeImg(){
 /////////////////////////////
 
 ///////EXERCISE 7 ////////////
-var isBold = false;
+var isBold = false;                                         //Boldifies the text
 function editParagraph(){
   const elements = document.getElementsByClassName("par");
   for(let i = 0; i<elements.length; i++){
@@ -156,31 +165,31 @@ function editParagraph(){
 //////////////////////////////
 
 ////////EXERCISE 8 ///////////
-function openLink(link){
+function openLink(link){            //Opens link in current tab
   window.open(link, "_self");
 }
 
-function openTab(link){
+function openTab(link){             //Opens link in new tab
   window.open(link);
 }
 
 function openWindow(link){
-  window.open(link, "_blank", "height=500,width=500");
+  window.open(link, "_blank", "height=900,width=1600");       //Opens link in new window, it is neccessary to give a height and width 
 }
 ////////////////////////////
 
 ////////EXERCISE 9 /////////
 
-function clickSubmit3(){
+function clickSubmit3(){                                      
   username = document.getElementById('usernameInput').value;
-  setCookie("username",username,14);
-  window.alert("added cookie" + username, 14);
+  setCookie("username",username,14);          //Adds cookie with the name that was just entered, expires after 14 days
+  //window.alert("added cookie" + username, 14);
   
 }
 
-function setCookie(cname, cvalue, exdays){
+function setCookie(cname, cvalue, exdays){            //function copied from my other project, creates a cookie with the values specified
   var d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));          //multiplies exdays by A LOT so it's a duration in days
   var expires = "expires"+d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -191,21 +200,21 @@ function loadCookie(){
 
 function getCookie(cname) {
   var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
+  var decodedCookie = decodeURIComponent(document.cookie);    //Loads previously saved cookie (if it exists)
+  var ca = decodedCookie.split(';');                          //Splits the cookie (which is basically a string) at ;  which were set earlier
   for(var i = 0; i <ca.length; i++) {
     var c = ca[i];
     while (c.charAt(0) == ' ') {
-      c = c.substring(1);
+      c = c.substring(1);                                   //Creates a string containing the value of the cookie
     }
     if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
+      return c.substring(name.length, c.length);            //Returns value of the cookie
     }
   }
   return "";
 }
 
-function changeGreeting(){
+function changeGreeting(){                                  //Updates the text with name saved in cookie
   cookie = getCookie("username");
   if(cookie!=null){
     document.getElementById("greeting").innerHTML = "Welcome back " + cookie;
@@ -218,7 +227,7 @@ function changeGreeting(){
 
 ///////EXERCISE 10/////////
 
-function getBrowserInformation(){
+function getBrowserInformation(){                                       //Honestly just 1:1 copied from the internet to get the browser type and version as the functions we learned just gave back useless gibberish
   var browser = '';
   var browserVersion = 0;
 

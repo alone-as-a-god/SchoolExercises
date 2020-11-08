@@ -20,9 +20,14 @@
             <p id="title-text">Change background color with javascript</p>
         </div>
         <div class="windowContent">
-            <label for="colorPicker">Pick a color</label>
-            <input type="color" id="colorPicker">
-            <input type="submit" id="submitColor" onclick="changeColor()">
+            <label for="colorPicker">Pick two colors</label>
+            <div class="inBlock">
+                <input onchange="changeColor()" type="color" id="colorPicker">
+                <input onchange="changeColor()" type="color" id="colorPicker2">     
+            </div>
+            <input type="range" id="alpha" onchange="changeColor()" min="0" max="1" step="0.001" value="1">
+            <br>
+            
         </div>
         
     </div>
