@@ -73,6 +73,7 @@ function changeColor(){                                     //Changes sites back
   color = adjustHexOpacity(document.getElementById("colorPicker").value, alpha);
   color2 = adjustHexOpacity(document.getElementById("colorPicker2").value, alpha);
   document.body.style.background = "linear-gradient("+color+", "+color2+"), url(../styles/images/office.jpg) no-repeat top center";
+  document.body.style.backgroundSize = "cover";
 }
 
 function adjustHexOpacity (color, opacity) {        //Formates the color to add opacity (otherwise the background image would be invisible)
